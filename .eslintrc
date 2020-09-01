@@ -1,0 +1,6 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
+  "extends": ["eslint-config-imweb", "prettier", "prettier/@typescript-eslint"],
+  "rules": {}
+}

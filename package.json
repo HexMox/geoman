@@ -1,0 +1,62 @@
+{
+  "name": "goman-cli",
+  "version": "0.1.0-alpha.1",
+  "description": "a scaffolding tool by nodejs, alternative to yeoman",
+  "main": "./dist/index.js",
+  "bin": {
+    "goman": "./dist/bin.js"
+  },
+  "scripts": {
+    "test": "jest",
+    "start": "tsc -w -p tsconfig.json",
+    "build": "tsc -p tsconfig.json",
+    "prepublish": "npm run build"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "prettier-eslint --single-quote --write",
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-push": "npm test"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HexMox/goman.git"
+  },
+  "keywords": [
+    "scaffolding"
+  ],
+  "author": "moxhe",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HexMox/goman/issues"
+  },
+  "homepage": "https://github.com/HexMox/goman#readme",
+  "dependencies": {
+    "commander": "^6.1.0",
+    "debug": "^4.1.1"
+  },
+  "devDependencies": {
+    "@commitlint/config-conventional": "^8.3.4",
+    "@types/debug": "^4.1.5",
+    "@types/node": "^14.6.2",
+    "@typescript-eslint/eslint-plugin": "^4.0.1",
+    "@typescript-eslint/parser": "^4.0.1",
+    "commitlint": "^9.1.2",
+    "eslint": "^7.8.0",
+    "eslint-config-imweb": "^0.2.19",
+    "eslint-config-prettier": "^6.11.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.13",
+    "prettier-eslint": "^11.0.0",
+    "prettier-eslint-cli": "^5.0.0",
+    "typescript": "^4.0.2"
+  }
+}

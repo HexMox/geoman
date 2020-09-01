@@ -1,0 +1,10 @@
+.vscode/
+node_modules
+src/
+docs/
+wiki/
+package-lock.json
+.eslintrc
+.eslintignore
+commitlint.config.js
+tsconfig.json
