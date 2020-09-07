@@ -41,12 +41,25 @@
   "homepage": "https://github.com/HexMox/goman#readme",
   "dependencies": {
     "commander": "^6.1.0",
-    "debug": "^4.1.1"
+    "debug": "^4.1.1",
+    "gulp": "^4.0.2",
+    "gulp-rename": "^2.0.0",
+    "gulp-template": "^5.0.0",
+    "inquirer": "^7.3.3",
+    "lodash": "^4.17.20",
+    "shelljs": "^0.8.4"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^8.3.4",
     "@types/debug": "^4.1.5",
+    "@types/gulp": "^4.0.6",
+    "@types/gulp-rename": "0.0.33",
+    "@types/gulp-template": "^5.0.1",
+    "@types/inquirer": "^7.3.1",
+    "@types/jest": "^26.0.13",
+    "@types/lodash": "^4.14.161",
     "@types/node": "^14.6.2",
+    "@types/shelljs": "^0.8.8",
     "@typescript-eslint/eslint-plugin": "^4.0.1",
     "@typescript-eslint/parser": "^4.0.1",
     "commitlint": "^9.1.2",
@@ -54,9 +67,11 @@
     "eslint-config-imweb": "^0.2.19",
     "eslint-config-prettier": "^6.11.0",
     "husky": "^4.2.5",
+    "jest": "^26.4.2",
     "lint-staged": "^10.2.13",
     "prettier-eslint": "^11.0.0",
     "prettier-eslint-cli": "^5.0.0",
+    "ts-jest": "^26.3.0",
     "typescript": "^4.0.2"
   }
 }
