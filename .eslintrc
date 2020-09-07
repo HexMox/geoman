@@ -2,5 +2,9 @@
   "parser": "@typescript-eslint/parser",
   "plugins": ["@typescript-eslint"],
   "extends": ["eslint-config-imweb", "prettier", "prettier/@typescript-eslint"],
-  "rules": {}
+  "rules": {
+    "import/extensions": "off",
+    "import/prefer-default-export": "off",
+    "no-use-before-define": "off"
+  }
 }
