@@ -1,6 +1,6 @@
 import path from 'path';
 import { QuestionCollection } from 'inquirer';
-import { error } from './logger';
+import { debug, error } from './logger';
 
 /**
  * 预留，额外gulp插件配置
@@ -82,12 +82,19 @@ export async function readGomanConfig(templateStr: string): Promise<GomanConfig>
  */
 export async function readTemplateOptions(templateStr: string): Promise<TemplateOptions> {
   const [, templateName] = splittemplateStr(templateStr);
-  const { shims, ...rest } = await readGomanConfig(templateStr);
+  const config = await readGomanConfig(templateStr);
+  const { shims, ...rest } = config;
 
   if (templateName && typeof shims[templateName] === 'object') {
+    const { questions } = config;
+    const { questions: subQuestions, ...others } = shims[templateName];
+
+    debug(`merging sub-template(${templateName}) options`, shims[templateName]);
     return {
       ...rest,
-      ...shims[templateName],
+      ...others,
+      // @todo QuestionCollection maybe object
+      questions: Array.isArray(questions) && Array.isArray(subQuestions) ? [...questions, ...subQuestions] : [],
     };
   }
 
