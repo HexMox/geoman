@@ -16,6 +16,13 @@ a scaffolding tool by nodejs, alternative to yeoman.
 
 Coming soon...
 
+## Roadmap
+
+* support `filters` option
+* support using npm package to generate
+* support composing generators
+* smarter shims-options and base-options merge
+
 ## Getting started
 
 1. write or find your generator
