@@ -5,7 +5,7 @@ import rename from 'gulp-rename';
 import template from 'gulp-template';
 import inquirer, { QuestionCollection, Answers } from 'inquirer';
 import shell from 'shelljs';
-import { debug, error, info } from '../common/logger';
+import { debug, info } from '../common/logger';
 import { readTemplateOptions, TemplateOptions } from '../common/config';
 
 const interpolate = /{{([\s\S]+?)}}/g;
@@ -28,19 +28,20 @@ export async function generate(templateName: string, destName?: string) {
 
   let answers: Answers;
 
-  gulp.series(
-    async () => {
-      answers = await prompts(questions);
-    },
-    () => emit(options, answers, destName),
-    () => success(options),
-  )((e) => {
-    if (e instanceof Error) {
-      error(e);
-      process.exit(1);
-    }
+  return new Promise((resolve, reject) => {
+    gulp.series(
+      async () => {
+        answers = await prompts(questions);
+      },
+      () => emit(options, answers, destName),
+      () => success(options),
+    )((e) => {
+      if (e instanceof Error) {
+        return reject(e);
+      }
 
-    process.exit(0);
+      resolve();
+    });
   });
 }
 
