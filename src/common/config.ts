@@ -71,7 +71,7 @@ export async function readGomanConfig(templateStr: string): Promise<GomanConfig>
 
     return options;
   } catch (e) {
-    error('获取meta.js配置失败', e);
+    error('unable to get meta.js', e);
     process.exit(1);
   }
 }
