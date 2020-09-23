@@ -1,5 +1,5 @@
 {
-  "name": "goman-cli",
+  "name": "geoman",
   "version": "0.1.0-alpha.1",
   "description": "a scaffolding tool by nodejs, alternative to yeoman",
   "main": "./dist/index.js",
