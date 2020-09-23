@@ -1,6 +1,6 @@
 {
   "name": "geoman",
-  "version": "0.1.0-alpha.1",
+  "version": "0.1.0-alpha.2",
   "description": "a scaffolding tool by nodejs, alternative to yeoman",
   "main": "./dist/index.js",
   "bin": {
@@ -10,6 +10,7 @@
     "test": "jest",
     "start": "tsc -w -p tsconfig.json",
     "build": "tsc -p tsconfig.json",
+    "dist": "npm publish --registry=https://registry.npmjs.org/",
     "prepublish": "npm run build"
   },
   "lint-staged": {
@@ -28,7 +29,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/HexMox/goman.git"
+    "url": "git+https://github.com/HexMox/geoman.git"
   },
   "keywords": [
     "scaffolding"
@@ -36,9 +37,9 @@
   "author": "moxhe",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/HexMox/goman/issues"
+    "url": "https://github.com/HexMox/geoman/issues"
   },
-  "homepage": "https://github.com/HexMox/goman#readme",
+  "homepage": "https://github.com/HexMox/geoman",
   "dependencies": {
     "commander": "^6.1.0",
     "debug": "^4.1.1",
