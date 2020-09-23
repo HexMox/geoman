@@ -4,7 +4,7 @@
   "description": "a scaffolding tool by nodejs, alternative to yeoman",
   "main": "./dist/index.js",
   "bin": {
-    "goman": "./dist/bin.js"
+    "geoman": "./dist/bin.js"
   },
   "scripts": {
     "test": "jest",

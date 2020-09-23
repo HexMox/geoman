@@ -5,7 +5,7 @@ import { debug, error } from './logger';
 /**
  * 预留，额外gulp插件配置
  */
-export type GomanPluginConfig =
+export type GeomanPluginConfig =
   | string
   | [
       string,
@@ -14,12 +14,12 @@ export type GomanPluginConfig =
       },
     ];
 
-export type GomanConfig = TemplateOptions & {
+export type GeomanConfig = TemplateOptions & {
   /**
    * 子模板配置
    */
   shims: {
-    [k: string]: GomanConfig;
+    [k: string]: GeomanConfig;
   };
 };
 
@@ -58,7 +58,7 @@ export type TemplateOptions = {
  * 读取模板路径配置meta.js
  * @param templateStr 模板路径:模板名称
  */
-export async function readGomanConfig(templateStr: string): Promise<GomanConfig> {
+export async function readGeomanConfig(templateStr: string): Promise<GeomanConfig> {
   const [templateRelativePath] = splittemplateStr(templateStr);
   const templatePath = path.join(process.cwd(), templateRelativePath);
   const metaPath = path.join(templatePath, 'meta.js');
@@ -82,7 +82,7 @@ export async function readGomanConfig(templateStr: string): Promise<GomanConfig>
  */
 export async function readTemplateOptions(templateStr: string): Promise<TemplateOptions> {
   const [, templateName] = splittemplateStr(templateStr);
-  const config = await readGomanConfig(templateStr);
+  const config = await readGeomanConfig(templateStr);
   const { shims, ...rest } = config;
 
   if (templateName && typeof shims[templateName] === 'object') {

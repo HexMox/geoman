@@ -21,7 +21,7 @@ const src = 'test/.template';
 const dest = 'test/.output';
 const result = join(process.cwd(), dest, `${answers.name}.txt`);
 
-describe('goman:generate', () => {
+describe('geoman:generate', () => {
   test('normally create files', async () => {
     inquirer.prompt = jest.fn().mockResolvedValueOnce(answers) as any;
 

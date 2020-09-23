@@ -8,9 +8,9 @@ a scaffolding tool by nodejs, alternative to yeoman.
 
 ## Usage
 
-> npm install goman-cli
+> npm install -D geoman
 
-> npx goman <generator>:<task> [dir]
+> npx geoman <generator>:<task> [dir]
 
 ## Features
 

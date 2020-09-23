@@ -2,7 +2,7 @@ import debugfactory from 'debug';
 import chalk from 'chalk';
 import { format } from 'util';
 
-export const debug = debugfactory('goman');
+export const debug = debugfactory('geoman');
 
 export function error(...args: any) {
   console.error(chalk.red(format.apply(format, args)));
